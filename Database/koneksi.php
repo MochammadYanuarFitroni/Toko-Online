@@ -1,6 +1,7 @@
 <?php
 $conn = mysqli_connect("localhost","root","","toko_online");
 
+//ambil data dari database
 function query($query){
     global $conn;
     $result = mysqli_query($conn,$query);

@@ -14,4 +14,4 @@ function cari($kategori, $cari)
 
     return query($query);
 }
-?>
+?>  

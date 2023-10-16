@@ -58,7 +58,7 @@ include 'header.php';
             </div>
         </div>
         <div class="col-md-12">
-            <a class="btn btn-primary btn-block" role="button" href="index.php">Link</a>
+            <a class="btn btn-primary btn-block" role="button" href="nota.php">Nota</a>
         </div>
     </div>
     <?php }else if($detail_pembayaran_terbaru['id_jenis_pembayaran'] == 2){?>
@@ -101,7 +101,7 @@ include 'header.php';
             </div>
         </div>
         <div class="col-md-12">
-            <a class="btn btn-primary btn-block" role="button" href="index.php">Link</a>
+            <a class="btn btn-primary btn-block" role="button" href="nota.php">Nota</a>
         </div>
     </div>
     <?php }else{?>
@@ -134,7 +134,7 @@ include 'header.php';
             </div>
         </div>
         <div class="col-md-12">
-            <a class="btn btn-primary btn-block" role="button" href="index.php">Home</a>
+            <a class="btn btn-primary btn-block" role="button" href="nota.php">Nota</a>
         </div>
     </div>
     <?php }?>

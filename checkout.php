@@ -8,6 +8,8 @@ include 'header.php';
     $dataPelanggan = query("SELECT * FROM pelanggan WHERE id_pelanggan = $_SESSION[id_pelanggan]")[0];
     ?>
     <form action="proses/prosessCheckout.php" method="POST">
+    <input type="hidden" name="id_pembelian" value="<?= $id_pembelian ?>">
+    <input type="hidden" name="email" value="<?= $dataPelanggan["email"]?>">
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">

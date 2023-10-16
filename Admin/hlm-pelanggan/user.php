@@ -11,7 +11,6 @@
       <th scope="col">No</th>
       <th scope="col">Nama</th>
       <th scope="col">Username</th>
-      <th scope="col">Password</th>
       <th scope="col">Email</th>
       <th scope="col">Nomor Hp</th>
       <th scope="col">Alamat</th>
@@ -25,7 +24,6 @@
             <td scope="row"><?= $nomor ?></td>
             <td><?= $plng["nama_pelanggan"] ?></td>
             <td><?= $plng["username"] ?></td>
-            <td><?= $plng["password"] ?></td>
             <td><?= $plng["email"] ?></td>
             <td><?= $plng["nomor_hp"] ?></td>
             <td><?= $plng["alamat"] ?></td>
