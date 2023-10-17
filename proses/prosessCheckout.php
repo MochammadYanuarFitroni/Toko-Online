@@ -31,11 +31,11 @@ if(mysqli_query($conn, $query)>0){
     // Hapus item dari keranjang
     $query_remove_cart = "DELETE FROM keranjang WHERE id_pelanggan = '$id_pelanggan'";
     mysqli_query($conn, $query_remove_cart);
-
-    echo "<script>alert('Data barang sudah dikirimkan ke penjual.\\nSilahkan melakukan pembayaran sesuai yang anda pilih');</script>";
-    echo "<script>location='../hlmnPembayaran.php';</script>";
     
     // Alihkan pengguna ke halaman konfirmasi
     //header('Location: ../hlmnPembayaran.php');
-}
+
+    echo "<script>alert('Data barang sudah dikirimkan ke penjual.\\nSilahkan melakukan pembayaran sesuai yang anda pilih');</script>";
+    echo "<script>location='../hlmnPembayaran.php';</script>";
+    }
 ?>

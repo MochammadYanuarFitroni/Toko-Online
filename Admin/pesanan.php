@@ -1,5 +1,5 @@
 <h1>Data Pesanan atau Pembelian</h1>
-<table class="table">
+<table id="example" class="table table-striped" style="width:100%">
   <thead>
     <tr>
       <th scope="col">No</th>

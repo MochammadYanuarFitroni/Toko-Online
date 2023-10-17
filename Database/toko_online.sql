@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 12, 2023 at 02:32 AM
+-- Generation Time: Oct 17, 2023 at 08:52 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -70,7 +70,21 @@ INSERT INTO `detail_pembelian` (`id_detail`, `id_pembelian`, `id_produk`, `jumla
 (26, 18, 14, 1),
 (27, 19, 2, 1),
 (28, 20, 2, 1),
-(29, 20, 17, 1);
+(29, 20, 17, 1),
+(30, 21, 18, 1),
+(31, 22, 1, 1),
+(32, 22, 15, 1),
+(33, 22, 16, 1),
+(34, 23, 1, 1),
+(35, 24, 1, 1),
+(36, 25, 1, 1),
+(37, 26, 2, 1),
+(38, 27, 14, 1),
+(39, 28, 14, 1),
+(40, 29, 14, 1),
+(41, 31, 14, 1),
+(42, 32, 2, 1),
+(43, 33, 18, 2);
 
 -- --------------------------------------------------------
 
@@ -182,7 +196,9 @@ INSERT INTO `pelanggan` (`id_pelanggan`, `nama_pelanggan`, `username`, `password
 (1, 'Cecil', 'yanuar', 'yanuar123', 'yanuar123@gmail.com', '08124335678', 'Puri Prima Sari A3/01 Tanggulangin, Sidoarjo'),
 (2, 'Suisei', 'suisad456', 'suisad456', 'suisad456@gmail.com', '0859333256129', 'Jl. Pahlawan no.1, Surabaaya'),
 (5, 'tes', 'tes', '$2y$10$zDzvXOUy5UaEO7rSrzGKXud.aiSaRg2KQ8dIK0sjxHK1CzPg1i1de', 'tes12233@gmail.com', '089566667777', 'tes'),
-(6, 'asd', 'asd', '$2y$10$Z1Z62pW.R8kWL/8LKHIv0OlKGOh7aPOH6TsalwDxXSz.Eq1SKoNqS', 'asd@gmail.com', '083822334455', 'asd');
+(6, 'asd', 'asd', '$2y$10$Z1Z62pW.R8kWL/8LKHIv0OlKGOh7aPOH6TsalwDxXSz.Eq1SKoNqS', 'asd@gmail.com', '083822334455', 'asd'),
+(7, 'Fitroni', 'fitroni', '$2y$10$jgIyE0GyW746etozfWu7Juv79FWM1ddLER4dH3KDreFcznH3mHpFO', 'fitroni@gmail.com', '081243442480', 'Puri Prima Sari A3/01 Sidoarjo'),
+(8, 'Yitroni', 'yitroni', '$2y$10$B1KdRZAen1oEtJWwm6GP9OwaYhQy2SubPIPXwVmim7di1J/Di1jkq', 'm.yanuar.f@gmail.com', '081243442480', 'Puri Prima Sari A3/01, Ketegan, Tanggulangin');
 
 -- --------------------------------------------------------
 
@@ -210,7 +226,20 @@ INSERT INTO `pembelian` (`id_pembelian`, `id_pelanggan`, `tanggal_pembelian`, `t
 (17, 6, '2023-10-11', 37000, 2, 1),
 (18, 6, '2023-10-11', 42000, 1, 1),
 (19, 6, '2023-10-11', 17000, 1, 1),
-(20, 6, '2023-10-11', 88000, 2, 2);
+(20, 6, '2023-10-11', 88000, 2, 2),
+(21, 7, '2023-10-17', 78000, 2, 2),
+(22, 8, '2023-10-17', 172000, 1, 1),
+(23, 8, '2023-10-17', 22000, 2, 1),
+(24, 8, '2023-10-17', 23000, 2, 2),
+(25, 8, '2023-10-17', 22000, 1, 1),
+(26, 8, '2023-10-17', 18000, 2, 2),
+(27, 8, '2023-10-17', 42000, 2, 1),
+(28, 8, '2023-10-17', 42000, 2, 1),
+(29, 8, '2023-10-17', 43000, 3, 2),
+(30, 8, '2023-10-17', 43000, 3, 2),
+(31, 8, '2023-10-17', 42000, 2, 1),
+(32, 8, '2023-10-17', 18000, 2, 2),
+(33, 8, '2023-10-17', 147000, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -313,7 +342,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `detail_pembelian`
 --
 ALTER TABLE `detail_pembelian`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `jenis_pembayaran`
@@ -331,7 +360,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `ongkir`
@@ -343,13 +372,13 @@ ALTER TABLE `ongkir`
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `pembelian`
 --
 ALTER TABLE `pembelian`
-  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `produk`

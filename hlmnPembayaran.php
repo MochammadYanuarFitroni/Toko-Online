@@ -53,12 +53,15 @@ include 'header.php';
                     <a href="https://money.kompas.com/read/2023/03/29/235931826/cara-transfer-uang-lewat-atm-bca-dengan-mudah">Melalui ATM</a>
                 </h4>
                 <h3 align="Center">
+                    <strong>Invoice atau nota pembelian kami kirimkan melalui email anda, tolong dicek</strong>
+                </h3>
+                <h3 align="Center">
                     <strong>Terima Kasih Telah Belanja di Toko Kami</strong>
                 </h3>
             </div>
         </div>
         <div class="col-md-12">
-            <a class="btn btn-primary btn-block" role="button" href="nota.php">Nota</a>
+            <a class="btn btn-primary btn-block" role="button" href="notapdf.php">Home</a>
         </div>
     </div>
     <?php }else if($detail_pembayaran_terbaru['id_jenis_pembayaran'] == 2){?>
@@ -96,12 +99,15 @@ include 'header.php';
                     <a href="https://kiaton.kontan.co.id/news/inilah-5-cara-transfer-ke-sesama-bni-melalui-atm-hingga-mobile-banking">Cara transfer BNI</a>
                 </h4>
                 <h3 align="Center">
+                    <strong>Invoice atau nota pembelian kami kirimkan melalui email anda, tolong dicek</strong>
+                </h3>
+                <h3 align="Center">
                     <strong>Terima Kasih Telah Belanja di Toko Kami</strong>
                 </h3>
             </div>
         </div>
         <div class="col-md-12">
-            <a class="btn btn-primary btn-block" role="button" href="nota.php">Nota</a>
+            <a class="btn btn-primary btn-block" role="button" href="notapdf.php">Home</a>
         </div>
     </div>
     <?php }else{?>
@@ -129,12 +135,15 @@ include 'header.php';
                 </h4>
                 <br>
                 <h3 align="Center">
+                    <strong>Invoice atau nota pembelian kami kirimkan melalui email anda, tolong dicek</strong>
+                </h3>
+                <h3 align="Center">
                     <strong>Terima Kasih Telah Belanja di Toko Kami</strong>
                 </h3>
             </div>
         </div>
         <div class="col-md-12">
-            <a class="btn btn-primary btn-block" role="button" href="nota.php">Nota</a>
+            <a class="btn btn-primary btn-block" role="button" href="notapdf.php">Home</a>
         </div>
     </div>
     <?php }?>
