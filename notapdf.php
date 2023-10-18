@@ -1,3 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Toko Alat Kesehatan</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<link rel="stylesheet" href="css/style1.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+	<script  src="js/jquery.js"></script>
+	<script  src="js/bootstrap.min.js"></script>
+    <style>
+        .fullpg{
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <div class="fullpg">
+
+    </div>
+    <script>
+        alert('invoice atau nota sudah terkirim');
+        window.location='index.php';
+    </script>
+</body>
+</html>
+
 <?php 
 session_start();
 include 'Database/koneksi.php';
@@ -23,8 +56,8 @@ JOIN pembelian ON detail_pembelian.id_pembelian = pembelian.id_pembelian
 WHERE detail_pembelian.id_pembelian = $id";
 $ambil = query($detail);
 
-//membuat invoice atau nota dalam bentuk pdf
-require_once('dompdf/autoload.inc.php');
+//require composer
+require 'vendor/autoload.php';
 
 use Dompdf\Dompdf;
 
@@ -127,31 +160,33 @@ file_put_contents($nama_file, $pdf);
 
 //untuk mengirim email
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
 
 //mengirimkan email ke penjual
-$mail = new PHPMailer();
-$mail->IsSMTP();
-$mail->SMTPDebug = 2;
-$mail->Debugoutput = 'html';
-$mail->Host = 'smtp.gmail.com';
-$mail->Port = 465;
-$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-$mail->SMTPAuth = true;
-$mail->Username = "tokoalatkesehatan49@gmail.com";
-$mail->Password = "htpc iilc evmn yqad";
-$mail->From = 'tokoalatkesehatan49@gmail.com';
-$mail->FromName = 'Toko Alat Kesehatan';
-$mail->addReplyTo('tokoalatkesehatan49@gmail.com', 'Toko Alat Kesehatan');
-$mail->addAddress($detail_pembayaran_terbaru["email"], $detail_pembayaran_terbaru["nama_pelanggan"]);
+$mail = new PHPMailer(true);
+try{
+    $mail->isSMTP();
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Port = 465;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->SMTPAuth = true;
+    $mail->Username = "tokoalatkesehatan49@gmail.com";
+    $mail->Password = "htpc iilc evmn yqad";
+    $mail->setFrom('tokoalatkesehatan49@gmail.com', 'Toko Alat Kesehatan');
+    $mail->addReplyTo('tokoalatkesehatan49@gmail.com', 'Toko Alat Kesehatan');
+    $mail->addAddress($detail_pembayaran_terbaru["email"], $detail_pembayaran_terbaru["nama_pelanggan"]);
+    
+    $mail->Subject = 'Invoice atau nota pembelian';
+    $mail->AltBody = 'Terimakasih sudah berbelanja di Toko Alat Kesehatan. Berikut invoice atau nota pembelian anda.';
+    $mail->Body = 'Terimakasih sudah berbelanja di Toko Alat Kesehatan. Berikut invoice atau nota pembelian anda.';
+    $mail->addAttachment($nama_file);
+    
+    $mail->send();
+}
+catch(Exception $e){
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
 
-$mail->addAttachment($nama_file);
-$mail->Subject = 'Invoice atau nota pembelian';
-$mail->Body = 'Terimakasih sudah berbelanja di Toko Alat Kesehatan. Berikut invoice atau nota pembelian anda.';
-
-echo "<script>alert('invoice atau nota sudah terkirim');</script>";
-echo "<script>location='index.php';</script>";
 ?>
