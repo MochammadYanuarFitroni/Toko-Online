@@ -7,12 +7,8 @@ composer require dompdf/dompdf
 phpmailer:   
 composer require phpmailer/phpmailer  
   
-jika dikomputer anda belum ada composer, install composer terlebih dahulu  
-  
-kalian bisa akses websitenya:  
-http://tokoalatkesehatan.infinityfreeapp.com/  
+jika dikomputer anda belum ada composer, install composer terlebih dahulu
   
 admin  
-http://tokoalatkesehatan.infinityfreeapp.com/admin  
 username: admin  
 password: admin123  
